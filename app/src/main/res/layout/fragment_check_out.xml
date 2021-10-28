@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context="checkOut.CheckOutFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/bt_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/dark_blue"
+            android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/checkout"
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="@+id/bt_up"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bt_up" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/time"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_up" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/calendar"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:text="@string/date_amp_time"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/icon_movie"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:text="@string/cinema"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/textView20"
+            app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+        <TextView
+            android:id="@+id/tv_checkOut_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView20"
+            tools:text="dd-MM-yyyy" />
+
+        <TextView
+            android:id="@+id/tv_checkOut_cinema"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView21"
+            tools:text="Kelapa Gading XXI" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/items"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_checkOut"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView22"
+            tools:listitem="@layout/seat_item" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/total"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/rv_checkOut" />
+
+        <TextView
+            android:id="@+id/tv_checkOut_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView23"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView23"
+            tools:text="@string/idr_item" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/e_wallet"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/textView22"
+            app:layout_constraintTop_toBottomOf="@+id/textView23" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/small_wallet"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:text="@string/balance"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/textView24"
+            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+        <TextView
+            android:id="@+id/tv_checkOut_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView25"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView25"
+            tools:text="@string/idr_item" />
+
+        <TextView
+            android:id="@+id/tv_checkOut_balance_less"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:text="@string/balance_less"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_checkOut_balance"
+            app:layout_constraintStart_toStartOf="@+id/textView25"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <Button
+            android:id="@+id/bt_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="44dp"
+            android:background="@drawable/button_purple"
+            android:text="@string/batalkan"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_pay" />
+
+        <Button
+            android:id="@+id/bt_pay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/button_pink"
+            android:text="@string/bayar_sekarang"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/bt_cancel"
+            app:layout_constraintStart_toStartOf="@+id/bt_cancel"
+            app:layout_constraintTop_toBottomOf="@+id/tv_checkOut_balance_less" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

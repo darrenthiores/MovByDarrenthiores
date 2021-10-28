@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'com.google.gms.google-services'
+    id "androidx.navigation.safeargs"
+}
+
+apply from: '../shareddependencies.gradle'
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        applicationId "com.darrenthiores.movbybwa"
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug{
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation project(":core")
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$navVersion"
+
+}

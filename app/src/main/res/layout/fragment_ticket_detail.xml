@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context="com.darrenthiores.movbybwa.ticketDetail.TicketDetailFragment">
+
+    <ImageButton
+        android:id="@+id/bt_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/dark_blue"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_up">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_detailTicket"
+                android:layout_width="120dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/rounded"
+                android:contentDescription="@string/movie_poster"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sample_movie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_ticketDetail_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="16sp"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_detailTicket"
+                app:layout_constraintTop_toTopOf="@+id/iv_detailTicket"
+                tools:text="Movie Name" />
+
+            <TextView
+                android:id="@+id/tv_ticketDetail_genre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textSize="13sp"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toEndOf="@+id/tv_ticketDetail_name"
+                app:layout_constraintStart_toStartOf="@+id/tv_ticketDetail_name"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ticketDetail_name"
+                tools:text="Genre" />
+
+            <TextView
+                android:id="@+id/tv_ticketDetail_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/pink_star"
+                android:drawablePadding="8dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/n_a"
+                android:textSize="13sp"
+                android:textColor="@color/blue"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_detailTicket"
+                app:layout_constraintStart_toStartOf="@+id/tv_ticketDetail_genre"
+                app:layout_constraintTop_toBottomOf="@+id/tv_ticketDetail_genre" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/time"
+                android:textSize="18sp"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_detailTicket" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawableLeft="@drawable/calendar"
+                android:textColor="@color/blue"
+                android:drawablePadding="8dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/date_time"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/textView19"
+                app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:drawableLeft="@drawable/icon_movie"
+                android:textColor="@color/blue"
+                android:drawablePadding="8dp"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:text="@string/cinema"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/textView20"
+                app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+            <TextView
+                android:id="@+id/tv_ticketDetail_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView20"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView20"
+                tools:text="dd-MM-yyyy" />
+
+            <TextView
+                android:id="@+id/tv_ticketDetail_cinema"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:textSize="14sp"
+                android:textColor="@color/blue"
+                app:layout_constraintBottom_toBottomOf="@+id/textView21"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView21"
+                tools:text="Kelapa Gading XXI" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/items"
+                android:textSize="18sp"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="@+id/textView19"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_ticketDetail"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView22"
+                tools:listitem="@layout/detail_seat_item" />
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/dashed_line"
+                app:layout_constraintBottom_toTopOf="@+id/iv_scanner"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_scanner"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/sample_scan"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/text_quick_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/quick_print"
+            android:textColor="@color/dark_blue"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_quick_print"
+            android:layout_marginStart="32dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/scan_qr"
+            android:textColor="@color/dark_blue"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_barcode"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/sample_barcode" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

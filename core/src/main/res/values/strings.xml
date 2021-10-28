@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="n_a">n/a</string>
+    <string name="seat_item">Seat No. %s</string>
+    <string name="idr_item">IDR. %d</string>
+    <string name="text_balance">IDR. %s</string>
+</resources>

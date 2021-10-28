@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_shape"
+    tools:context="com.darrenthiores.movbybwa.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fragment_shape">
+        <TextView
+            android:id="@+id/tv_home_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/cv_home"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="User Name" />
+
+        <TextView
+            android:id="@+id/tv_home_balance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/small_wallet"
+            android:drawablePadding="8dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/cv_home"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_name"
+            tools:text="Rp.100.000" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/cv_home"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginEnd="24dp"
+            android:src="@drawable/ic_baseline_account_circle_24"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_home_balance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_home_name" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/now_playing_"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_balance"
+            app:layout_constraintTop_toBottomOf="@+id/tv_home_balance" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_now_playing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_home_balance"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            tools:listitem="@layout/now_playing_item" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/coming_soon"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/rv_now_playing"
+            app:layout_constraintTop_toBottomOf="@+id/rv_now_playing" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_coming_soon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"
+            tools:listitem="@layout/coming_soon_item" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

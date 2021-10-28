@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fragment_shape"
+    tools:context="com.darrenthiores.movbybwa.profile.ProfileFragment">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/settings"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/keep_it_up_to_date"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/cv_setting"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <TextView
+        android:id="@+id/tv_setting_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@+id/cv_setting"
+        app:layout_constraintStart_toStartOf="@+id/cv_setting"
+        app:layout_constraintTop_toBottomOf="@+id/cv_setting"
+        tools:text="User Name" />
+
+    <TextView
+        android:id="@+id/tv_profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/cv_setting"
+        app:layout_constraintStart_toStartOf="@+id/cv_setting"
+        app:layout_constraintTop_toBottomOf="@+id/tv_setting_name"
+        tools:text="...@gmail.com" />
+
+    <TextView
+        android:id="@+id/bt_wallet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:drawableLeft="@drawable/small_wallet"
+        android:drawablePadding="16dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical"
+        android:text="@string/my_wallet"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profile_email" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/bt_wallet"
+        app:layout_constraintStart_toStartOf="@+id/bt_wallet"
+        app:layout_constraintTop_toBottomOf="@+id/bt_wallet" />
+
+    <TextView
+        android:id="@+id/bt_edit_profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/icon_account"
+        android:drawablePadding="16dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical"
+        android:text="@string/edit_profile"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/bt_wallet"
+        app:layout_constraintStart_toStartOf="@+id/bt_wallet"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/bt_edit_profile"
+        app:layout_constraintStart_toStartOf="@+id/bt_edit_profile"
+        app:layout_constraintTop_toBottomOf="@+id/bt_edit_profile" />
+
+    <TextView
+        android:id="@+id/bt_language"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/icon_flag"
+        android:drawablePadding="16dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical"
+        android:text="@string/change_language"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/bt_edit_profile"
+        app:layout_constraintStart_toStartOf="@+id/bt_edit_profile"
+        app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/bt_language"
+        app:layout_constraintStart_toStartOf="@+id/bt_language"
+        app:layout_constraintTop_toBottomOf="@+id/bt_language" />
+
+    <TextView
+        android:id="@+id/bt_help"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawableLeft="@drawable/icon_help"
+        android:drawablePadding="16dp"
+        android:fontFamily="sans-serif"
+        android:gravity="center_vertical"
+        android:text="@string/help"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/bt_language"
+        app:layout_constraintStart_toStartOf="@+id/bt_language"
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toBottomOf="@+id/bt_help" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

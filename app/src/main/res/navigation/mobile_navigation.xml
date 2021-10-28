@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.darrenthiores.movbybwa.home.HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_ticket"
+        android:name="com.darrenthiores.movbybwa.ticket.TicketFragment"
+        tools:layout="@layout/fragment_ticket" >
+        <action
+            android:id="@+id/action_navigation_ticket_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_navigation_ticket_to_ticketDetailFragment"
+            app:destination="@id/ticketDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.darrenthiores.movbybwa.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_editProfileFragment"
+            app:destination="@id/editProfileFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_myWalletFragment"
+            app:destination="@id/myWalletFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.darrenthiores.movbybwa.detail.DetailFragment"
+        app:moduleName="Mov_by_BWA.home"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_pickSeatFragment"
+            app:destination="@id/pickSeatFragment" />
+        <argument
+            android:name="movie"
+            app:argType="com.darrenthiores.core.model.data.Movie"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="type"
+            app:argType="string"
+            android:defaultValue="COMING_SOON" />
+    </fragment>
+    <fragment
+        android:id="@+id/pickSeatFragment"
+        android:name="com.darrenthiores.movbybwa.checkOut.PickSeatFragment"
+        app:moduleName="Mov_by_BWA.home"
+        android:label="fragment_pick_seat"
+        tools:layout="@layout/fragment_pick_seat" >
+        <action
+            android:id="@+id/action_pickSeatFragment_to_checkOutFragment"
+            app:destination="@id/checkOutFragment" />
+        <argument
+            android:name="title"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="non" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOutFragment"
+        android:name="com.darrenthiores.movbybwa.checkOut.CheckOutFragment"
+        app:moduleName="Mov_by_BWA.home"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOutFragment_to_bookSuccessFragment"
+            app:destination="@id/bookSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookSuccessFragment"
+        android:name="com.darrenthiores.movbybwa.checkOut.BookSuccessFragment"
+        app:moduleName="Mov_by_BWA.home"
+        android:label="fragment_book_success"
+        tools:layout="@layout/fragment_book_success" >
+        <action
+            android:id="@+id/action_bookSuccessFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_bookSuccessFragment_to_navigation_ticket"
+            app:destination="@id/navigation_ticket"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.darrenthiores.movbybwa.editProfile.EditProfileFragment"
+        app:moduleName="Mov_by_BWA.profile"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" >
+        <argument
+            android:name="user"
+            app:argType="com.darrenthiores.core.model.data.User"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/myWalletFragment"
+        android:name="com.darrenthiores.movbybwa.myWallet.MyWalletFragment"
+        app:moduleName="Mov_by_BWA.profile"
+        android:label="fragment_my_wallet"
+        tools:layout="@layout/fragment_my_wallet" >
+        <argument
+            android:name="balance"
+            app:argType="float"
+            android:defaultValue="0.0" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.darrenthiores.movbybwa.history.HistoryFragment"
+        app:moduleName="Mov_by_BWA.ticket"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/ticketDetailFragment"
+        android:name="com.darrenthiores.movbybwa.ticketDetail.TicketDetailFragment"
+        app:moduleName="Mov_by_BWA.ticket"
+        android:label="fragment_ticket_detail"
+        tools:layout="@layout/fragment_ticket_detail" >
+        <action
+            android:id="@+id/action_ticketDetailFragment_to_barcodeFragment"
+            app:destination="@id/barcodeFragment" />
+        <argument
+            android:name="movie"
+            app:argType="com.darrenthiores.core.model.data.Movie"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <dialog
+        android:id="@+id/barcodeFragment"
+        android:name="com.darrenthiores.movbybwa.ticketDetail.BarcodeFragment"
+        app:moduleName="Mov_by_BWA.ticket"
+        android:label="fragment_barcode"
+        tools:layout="@layout/fragment_barcode" />
+
+</navigation>

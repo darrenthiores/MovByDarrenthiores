@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1095102704736",
+    "project_id": "mov-by-bwa",
+    "storage_bucket": "mov-by-bwa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095102704736:android:69a940b60be6412bb1a705",
+        "android_client_info": {
+          "package_name": "com.darrenthiores.movbybwa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095102704736-r1qj3603t8drc738rkaoaenfdvajkavi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoUec4Fd-5_ME91jyLWRunpam5EeBHXVc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095102704736-r1qj3603t8drc738rkaoaenfdvajkavi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

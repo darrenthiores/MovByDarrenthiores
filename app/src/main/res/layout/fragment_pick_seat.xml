@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_blue"
+    tools:context=".checkOut.PickSeatFragment">
+
+    <ImageButton
+        android:id="@+id/bt_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/dark_blue"
+        android:src="@drawable/ic_baseline_arrow_back_ios_new_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/pilih_bangku"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bt_up" />
+
+    <TextView
+        android:id="@+id/tv_pickSeat_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        tools:text="Movie Name" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:background="@color/pink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_pickSeat_name" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/layar_bioskop"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/a"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <ImageButton
+        android:id="@+id/a1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+    <ImageButton
+        android:id="@+id/a2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/a1"
+        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toEndOf="@+id/a1"
+        app:layout_constraintTop_toTopOf="@+id/a1" />
+
+    <ImageButton
+        android:id="@+id/a3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+    <ImageButton
+        android:id="@+id/a4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/a3"
+        app:layout_constraintEnd_toStartOf="@+id/a3"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="@+id/a3" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/b"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <ImageButton
+        android:id="@+id/b1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+    <ImageButton
+        android:id="@+id/b2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/b1"
+        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintStart_toEndOf="@+id/b1"
+        app:layout_constraintTop_toTopOf="@+id/b1" />
+
+    <ImageButton
+        android:id="@+id/b3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView13"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+    <ImageButton
+        android:id="@+id/b4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/b3"
+        app:layout_constraintEnd_toStartOf="@+id/b3"
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toTopOf="@+id/b3" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/c"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <ImageButton
+        android:id="@+id/c1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+    <ImageButton
+        android:id="@+id/c2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/c1"
+        app:layout_constraintEnd_toStartOf="@+id/textView14"
+        app:layout_constraintStart_toEndOf="@+id/c1"
+        app:layout_constraintTop_toTopOf="@+id/c1" />
+
+    <ImageButton
+        android:id="@+id/c3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView14"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+    <ImageButton
+        android:id="@+id/c4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/c3"
+        app:layout_constraintEnd_toStartOf="@+id/c3"
+        app:layout_constraintStart_toEndOf="@+id/textView14"
+        app:layout_constraintTop_toTopOf="@+id/c3" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/d"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+    <ImageButton
+        android:id="@+id/d1"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+    <ImageButton
+        android:id="@+id/d2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/d1"
+        app:layout_constraintEnd_toStartOf="@+id/textView15"
+        app:layout_constraintStart_toEndOf="@+id/d1"
+        app:layout_constraintTop_toTopOf="@+id/d1" />
+
+    <ImageButton
+        android:id="@+id/d3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/textView15" />
+
+    <ImageButton
+        android:id="@+id/d4"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/d3"
+        app:layout_constraintEnd_toStartOf="@+id/d3"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="@+id/d3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/empty"
+        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+        app:layout_constraintEnd_toStartOf="@+id/textView16"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/empty"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:drawableLeftCompat="@drawable/seat"
+        app:layout_constraintBottom_toTopOf="@+id/bt_buy_ticket"
+        app:layout_constraintEnd_toStartOf="@+id/d4"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/booked"
+        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintEnd_toStartOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/booked"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:drawableLeftCompat="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="24dp"
+        android:src="@drawable/selected"
+        app:layout_constraintBottom_toBottomOf="@+id/textView18"
+        app:layout_constraintStart_toEndOf="@+id/textView16"
+        app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/selected"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:drawableLeftCompat="@drawable/seat"
+        app:layout_constraintBottom_toBottomOf="@+id/textView16"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/textView16" />
+
+    <Button
+        android:id="@+id/bt_buy_ticket"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/button_pink"
+        android:text="@string/beli_ticket_d"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
