@@ -114,10 +114,9 @@
         app:moduleName="Mov_by_BWA.profile"
         android:label="fragment_my_wallet"
         tools:layout="@layout/fragment_my_wallet" >
-        <argument
-            android:name="balance"
-            app:argType="float"
-            android:defaultValue="0.0" />
+        <action
+            android:id="@+id/action_myWalletFragment_to_topUpFragment"
+            app:destination="@id/topUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
@@ -146,5 +145,26 @@
         app:moduleName="Mov_by_BWA.ticket"
         android:label="fragment_barcode"
         tools:layout="@layout/fragment_barcode" />
+    <fragment
+        android:id="@+id/topUpFragment"
+        android:name="com.darrenthiores.movbybwa.topUp.TopUpFragment"
+        android:label="fragment_top_up"
+        tools:layout="@layout/fragment_top_up" >
+        <action
+            android:id="@+id/action_topUpFragment_to_topUpSuccessFragment"
+            app:destination="@id/topUpSuccessFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/topUpSuccessFragment"
+        android:name="com.darrenthiores.movbybwa.topUp.TopUpSuccessFragment"
+        android:label="fragment_top_up_success"
+        tools:layout="@layout/fragment_top_up_success" >
+        <action
+            android:id="@+id/action_topUpSuccessFragment_to_myWalletFragment"
+            app:destination="@id/myWalletFragment" />
+        <action
+            android:id="@+id/action_topUpSuccessFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
 
 </navigation>

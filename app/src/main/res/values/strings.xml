@@ -69,4 +69,16 @@
     <string name="saldo_tersedia">Saldo Tersedia</string>
     <string name="daftar_transaksi">Daftar Transaksi</string>
     <string name="update_data">Update Data</string>
+    <string name="top_up">Top Up</string>
+    <string name="custom_amount">Custom Amount</string>
+    <string name="quick_options">Quick Options</string>
+    <string name="idr_n20_000">IDR\n20.000</string>
+    <string name="idr_n50_000">IDR\n50.000</string>
+    <string name="idr_n100_000">IDR\n100.000</string>
+    <string name="idr_n200_000">IDR\n200.000</string>
+    <string name="idr_n300_000">IDR\n300.000</string>
+    <string name="idr_n500_000">IDR\n500.000</string>
+    <string name="top_up_success">Top Up Success!</string>
+    <string name="grab_a_ticket_and_enjoy_watching">Grab a ticket and enjoy watching</string>
+    <string name="check_wallet">Check Wallet</string>
 </resources>

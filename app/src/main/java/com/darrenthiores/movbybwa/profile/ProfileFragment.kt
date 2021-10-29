@@ -52,9 +52,7 @@ class ProfileFragment : Fragment() {
                         findNavController().navigate(toEditProfile)
                     }
                     btWallet.setOnClickListener {
-                        val mBundle = Bundle()
-                        mBundle.putDouble("BALANCE_KEY", user?.balance!!)
-                        findNavController().navigate(R.id.action_navigation_profile_to_myWalletFragment, mBundle)
+                        findNavController().navigate(R.id.action_navigation_profile_to_myWalletFragment)
                     }
                 }
             }

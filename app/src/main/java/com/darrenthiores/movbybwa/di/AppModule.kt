@@ -11,8 +11,10 @@ import com.darrenthiores.movbybwa.detail.DetailViewModel
 import com.darrenthiores.movbybwa.history.HistoryViewModel
 import com.darrenthiores.movbybwa.home.HomeViewModel
 import com.darrenthiores.movbybwa.editProfile.EditProfileViewModel
+import com.darrenthiores.movbybwa.myWallet.MyWalletViewModel
 import com.darrenthiores.movbybwa.profile.ProfileViewModel
 import com.darrenthiores.movbybwa.ticket.TicketViewModel
+import com.darrenthiores.movbybwa.topUp.TopUpViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
@@ -33,5 +35,7 @@ val viewModelModule = module {
     viewModel { HistoryViewModel() }
     viewModel { ProfileViewModel(get()) }
     viewModel { EditProfileViewModel(get()) }
+    viewModel { MyWalletViewModel(get()) }
+    viewModel { TopUpViewModel(get()) }
 
 }

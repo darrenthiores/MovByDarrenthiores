@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/icon_ticket.xml" value="0.24259259259259258" />
         <entry key="app/src/main/res/drawable/seat.xml" value="0.2351851851851852" />
         <entry key="app/src/main/res/drawable/selected.xml" value="0.2351851851851852" />
+        <entry key="app/src/main/res/drawable/selectedTopUp.xml" value="0.25092592592592594" />
         <entry key="app/src/main/res/layout/activity_home_screen.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1503623188405797" />
         <entry key="app/src/main/res/layout/activity_main_container.xml" value="0.13179347826086957" />
@@ -25,13 +26,13 @@
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.2341485507246377" />
         <entry key="app/src/main/res/layout/fragment_add_photo.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_barcode.xml" value="0.12006079027355623" />
-        <entry key="app/src/main/res/layout/fragment_book_success.xml" value="0.12006079027355623" />
+        <entry key="app/src/main/res/layout/fragment_book_success.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_check_out.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/fragment_edit_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_history.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.12006079027355623" />
-        <entry key="app/src/main/res/layout/fragment_my_wallet.xml" value="0.12006079027355623" />
+        <entry key="app/src/main/res/layout/fragment_my_wallet.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_on_boarding_one.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_on_boarding_three.xml" value="0.14447463768115942" />
         <entry key="app/src/main/res/layout/fragment_on_boarding_two.xml" value="0.14447463768115942" />
@@ -41,6 +42,8 @@
         <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_ticket.xml" value="0.12006079027355623" />
         <entry key="app/src/main/res/layout/fragment_ticket_detail.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_top_up.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/fragment_top_up_success.xml" value="0.2328125" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.15" />
         <entry key="core/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.2351851851851852" />
         <entry key="core/src/main/res/drawable/rounded.xml" value="0.2351851851851852" />
