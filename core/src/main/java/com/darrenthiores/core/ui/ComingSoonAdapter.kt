@@ -30,6 +30,7 @@ class ComingSoonAdapter(
 
         fun bind(movie:Movie){
             binding.apply {
+                ivComingSoon.clipToOutline = true
                 tvComingSoonName.text = movie.title
                 tvComingSoonGenre.text = movie.genre
                 tvComingSoonRate.text = movie.rating.toString()

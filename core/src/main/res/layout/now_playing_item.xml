@@ -12,6 +12,7 @@
         android:layout_height="240dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded"
+        android:outlineProvider="background"
         android:contentDescription="@string/movie_poster"
         android:scaleType="centerCrop"
         android:src="@drawable/sample_movie"

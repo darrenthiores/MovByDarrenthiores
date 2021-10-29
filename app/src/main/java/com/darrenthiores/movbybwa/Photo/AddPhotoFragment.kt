@@ -18,15 +18,10 @@ import com.darrenthiores.core.model.data.User
 import com.darrenthiores.movbybwa.Navigation.MainNavActivity
 import com.darrenthiores.movbybwa.R
 import com.darrenthiores.movbybwa.databinding.FragmentAddPhotoBinding
-import com.karumi.dexter.Dexter
-import com.karumi.dexter.PermissionToken
-import com.karumi.dexter.listener.PermissionDeniedResponse
-import com.karumi.dexter.listener.PermissionGrantedResponse
-import com.karumi.dexter.listener.PermissionRequest
-import com.karumi.dexter.listener.single.PermissionListener
+import com.github.dhaval2404.imagepicker.ImagePicker
 import org.koin.android.ext.android.inject
 
-class AddPhotoFragment : Fragment(), PermissionListener {
+class AddPhotoFragment : Fragment() {
 
     private var _binding:FragmentAddPhotoBinding? = null
     private val binding get() = _binding
@@ -68,10 +63,9 @@ class AddPhotoFragment : Fragment(), PermissionListener {
                     fabAddImg.setImageResource(R.drawable.ic_baseline_add_24)
                     cvProfile.setImageResource(R.drawable.ic_baseline_account_circle_24)
                 } else {
-                    Dexter.withActivity(activity)
-                        .withPermission(Manifest.permission.CAMERA)
-                        .withListener(this@AddPhotoFragment)
-                        .check()
+                    ImagePicker.with(this@AddPhotoFragment)
+                        .cameraOnly()
+                        .start(REQUEST_FOR_PICTURE)
                 }
             }
 
@@ -93,7 +87,7 @@ class AddPhotoFragment : Fragment(), PermissionListener {
                 dialog.dismiss()
 
                 ref.downloadUrl.addOnCompleteListener {
-                    viewModel.updateData(it.toString()).addOnCompleteListener {
+                    viewModel.updateData(it.result.toString()).addOnCompleteListener {
                         startActivity(Intent(activity, MainNavActivity::class.java))
                     }
                 }
@@ -114,35 +108,18 @@ class AddPhotoFragment : Fragment(), PermissionListener {
         _binding = null
     }
 
-    override fun onPermissionGranted(response: PermissionGrantedResponse?) {
-        val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-        startActivityForResult(galleryIntent, REQUEST_FOR_PICTURE)
-    }
-
-    override fun onPermissionDenied(response: PermissionDeniedResponse?) {
-        Toast.makeText(activity, "Permission Denied!", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onPermissionRationaleShouldBeShown(
-        permission: PermissionRequest?,
-        token: PermissionToken?
-    ) {
-
-    }
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode== REQUEST_FOR_PICTURE && resultCode == Activity.RESULT_OK){
-            val bitmap = data?.extras?.get("data") as Bitmap
+            filePath = data?.data!!
             isAdd = true
             binding?.apply {
                 btSave.visibility = View.VISIBLE
                 fabAddImg.setImageResource(R.drawable.ic_baseline_delete_24)
                 Glide.with(this@AddPhotoFragment)
-                    .load(bitmap)
+                    .load(filePath)
                     .into(cvProfile)
             }
-            filePath = data.data!!
         }
     }
 

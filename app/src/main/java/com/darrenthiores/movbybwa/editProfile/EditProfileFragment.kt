@@ -17,15 +17,10 @@ import com.bumptech.glide.Glide
 import com.darrenthiores.core.model.data.User
 import com.darrenthiores.movbybwa.Photo.AddPhotoFragment
 import com.darrenthiores.movbybwa.databinding.FragmentEditProfileBinding
-import com.karumi.dexter.Dexter
-import com.karumi.dexter.PermissionToken
-import com.karumi.dexter.listener.PermissionDeniedResponse
-import com.karumi.dexter.listener.PermissionGrantedResponse
-import com.karumi.dexter.listener.PermissionRequest
-import com.karumi.dexter.listener.single.PermissionListener
+import com.github.dhaval2404.imagepicker.ImagePicker
 import org.koin.android.ext.android.inject
 
-class EditProfileFragment : Fragment(), PermissionListener {
+class EditProfileFragment : Fragment() {
 
     private var _binding: FragmentEditProfileBinding? = null
     private val binding get() = _binding
@@ -54,10 +49,9 @@ class EditProfileFragment : Fragment(), PermissionListener {
             edEmail.setText(user?.email)
             edPassword.setText(user?.password)
             fabAddImg.setOnClickListener {
-                Dexter.withActivity(activity)
-                    .withPermission(Manifest.permission.CAMERA)
-                    .withListener(this@EditProfileFragment)
-                    .check()
+                ImagePicker.with(this@EditProfileFragment)
+                    .cameraOnly()
+                    .start(REQUEST_FOR_PICTURE)
             }
             btUp.setOnClickListener {
                 requireActivity().onBackPressed()
@@ -101,17 +95,18 @@ class EditProfileFragment : Fragment(), PermissionListener {
 
                     ref.putFile(filePath!!)
                         .addOnSuccessListener {
-                            dialog.dismiss()
 
                             ref.downloadUrl.addOnCompleteListener {
-                                viewModel.updateImage(it.toString()).addOnCompleteListener { task ->
+                                viewModel.updateImage(it.result.toString()).addOnCompleteListener { task ->
                                     if(task.isSuccessful){
+                                        dialog.dismiss()
                                         Toast.makeText(activity, "Image Updated!", Toast.LENGTH_SHORT).show()
                                     }
                                 }
                             }
                         }
                         .addOnFailureListener {
+                            Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
                             dialog.dismiss()
                         }
                 }
@@ -128,13 +123,12 @@ class EditProfileFragment : Fragment(), PermissionListener {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(requestCode== REQUEST_FOR_PICTURE && resultCode == Activity.RESULT_OK){
-            val bitmap = data?.extras?.get("data") as Bitmap
+            filePath = data?.data!!
             binding?.apply {
                 Glide.with(this@EditProfileFragment)
-                    .load(bitmap)
+                    .load(filePath)
                     .into(cvProfile)
             }
-            filePath = data.data!!
         }
     }
 
@@ -147,22 +141,6 @@ class EditProfileFragment : Fragment(), PermissionListener {
         private const val errorMessage = "This Field Cannot Be Empty!"
         private const val emailError = "Email Invalid!"
         private const val REQUEST_FOR_PICTURE = 30
-    }
-
-    override fun onPermissionGranted(response: PermissionGrantedResponse?) {
-        val galleryIntent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-        startActivityForResult(galleryIntent, REQUEST_FOR_PICTURE)
-    }
-
-    override fun onPermissionDenied(response: PermissionDeniedResponse?) {
-        Toast.makeText(activity, "Permission Denied!", Toast.LENGTH_SHORT).show()
-    }
-
-    override fun onPermissionRationaleShouldBeShown(
-        permission: PermissionRequest?,
-        token: PermissionToken?
-    ) {
-
     }
 
 }

@@ -39,6 +39,7 @@ class TicketDetailFragment : Fragment() {
         ticketAdapter.setData(checkOutList)
 
         binding?.apply {
+            ivDetailTicket.clipToOutline = true
             tvTicketDetailName.text = movie?.title
             tvTicketDetailGenre.text = movie?.genre
             tvTicketDetailRate.text = movie?.rating.toString()

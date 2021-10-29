@@ -29,6 +29,7 @@ class NowPlayingAdapter(
 
         fun bind(movie:Movie){
             binding.apply {
+                ivNowPlaying.clipToOutline = true
                 tvNowPlayingName.text = movie.title
                 tvNowPlayingGenre.text = movie.genre
                 tvNowPlayingRate.text = movie.rating.toString()
