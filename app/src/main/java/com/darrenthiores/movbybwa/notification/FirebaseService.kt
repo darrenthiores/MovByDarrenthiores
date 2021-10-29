@@ -11,6 +11,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.darrenthiores.movbybwa.Container.MainContainerActivity
 import com.darrenthiores.movbybwa.R
+import com.darrenthiores.movbybwa.Splash.SplashScreenActivity
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
@@ -30,7 +31,7 @@ class FirebaseService : FirebaseMessagingService() {
 
     private fun showNotification(remoteMessage: RemoteMessage.Notification) {
 
-        val intent = Intent(this, MainContainerActivity::class.java)
+        val intent = Intent(this, SplashScreenActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 
         val pendingIntent = PendingIntent.getActivity(this, NOTIFICATION_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT)
